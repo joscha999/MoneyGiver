@@ -28,10 +28,7 @@ namespace Joscha999.MoneyGiver {
 			moneyAmount.OnValueChanged += val => amountGiven = val;
 			SettingManager.AddDefault("moneyAmount", moneyAmount);
 
-			//TODO: improve; add GetOrDefaultValue()
-			if (SettingManager.TryGetValue("moneyAmount", out float f))
-				amountGiven = f;
-			else
+			if (!SettingManager.TryGetValue("moneyAmount", out amountGiven))
 				amountGiven = 1000000;
 		}
 
