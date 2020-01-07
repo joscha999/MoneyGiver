@@ -1,10 +1,5 @@
 ﻿using SimAirport.Modding.Base;
 using SimAirport.Modding.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using SimAirport.Modding.Data;
 
@@ -47,6 +42,7 @@ namespace Joscha999.MoneyGiver {
 				&& Input.GetKey(KeyCode.LeftControl)
 				&& (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.Plus))) {
 				Game.Instance.MoneyBalance += amountGiven;
+				Debug.Log(gameState);
 			}
 		}
 	}
